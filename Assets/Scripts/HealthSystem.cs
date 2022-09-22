@@ -15,7 +15,7 @@ public abstract class HealthSystem : MonoBehaviour
 
     public bool isDead;
 
-    private void Start()
+    private void Awake()
     {
         Health = maxHealth;
     }
