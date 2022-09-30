@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
     }
 
     void FixedUpdate()
@@ -43,5 +44,7 @@ public class PlayerController : MonoBehaviour
         {
             isMoving = false;
         }
+
+        //Try to normalize rb.velocity;
     }
 }

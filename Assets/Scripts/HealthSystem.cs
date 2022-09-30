@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class HealthSystem : MonoBehaviour
+public abstract class HealthSystem : MonoBehaviour, IDamagable
 {
     [Header("General")]
     private int health;
@@ -19,7 +19,7 @@ public abstract class HealthSystem : MonoBehaviour
     {
         Health = maxHealth;
     }
-    public void GetDamage(int damage)
+    public void GetDamage(int damage, GameObject attacker)
     {
         if (damage > Health)
         {
@@ -30,6 +30,14 @@ public abstract class HealthSystem : MonoBehaviour
             Health -= damage;
         }
 
+
+        Debug.LogFormat("<color=white><b>Damage Debug</b> </color> " +
+            "\n " +
+            "\n{0} Damage Taken: {1} " +
+            "\nRemaining Health: {2} " +
+            "\nAttacker: {3}" 
+            , gameObject.name, damage, Health, attacker.name);
+
         UpdateSlider(Health);
         CheckHealthState();
     }
@@ -39,21 +47,7 @@ public abstract class HealthSystem : MonoBehaviour
         {
             isDead = true;
 
-            PlayerController playerController;
-            //EntityController entityController;
-
-            try
-            {
-                playerController = GetComponent<PlayerController>();
-                //entityController = GetComponent<EntityController>();
-
-                playerController.enabled = false;
-                //entityController.enabled = false;
-            }
-            catch
-            {
-                Debug.LogWarning("No controller found");
-            }
+            Destroy(gameObject, 0.12f);
         }
     }
     public abstract void UpdateSlider(int health);
