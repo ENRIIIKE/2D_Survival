@@ -6,6 +6,7 @@ public class DummyAttack : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform aimTransform;
+    public Transform temporaryTransform;
 
     public int damage;
     public float attackSpeed;
@@ -22,13 +23,13 @@ public class DummyAttack : MonoBehaviour
         if (attackTime < Time.time)
         {
             GameObject projectileInstance = Instantiate(projectilePrefab, aimTransform.position,
-                Quaternion.identity, null);
+                Quaternion.identity, temporaryTransform);
 
             Projectile projectileInstanceScript = projectileInstance.GetComponent<Projectile>();
             projectileInstanceScript.damage = damage;
             projectileInstanceScript.shooter = gameObject;
 
-            projectileInstance.GetComponent<Rigidbody2D>().AddForce(Vector2.right * projectileSpeed, ForceMode2D.Impulse);
+            projectileInstance.GetComponent<Rigidbody2D>().AddForce(transform.right * projectileSpeed, ForceMode2D.Impulse);
 
             attackTime = Time.time + attackSpeed;
         }

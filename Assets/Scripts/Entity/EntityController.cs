@@ -6,6 +6,9 @@ using Pathfinding;
 public abstract class EntityController : MonoBehaviour
 {
     public EntitySO entitySO;
+    [HideInInspector] 
+    public EnemyLocationSpawner enemyLocationSpawner;
+    public Transform temporaryObjects;
 
     [Header("Pathfinder")]
     private AIPath aiPath;
@@ -18,12 +21,17 @@ public abstract class EntityController : MonoBehaviour
     public LayerMask targetLayer;
     public bool targetFound;
 
+    public bool showGizmos = false;
+
     [Header("Idle Movement")]
     public float idleCooldownMin;
     public float idleCooldownMax;
     private float idleTime;
     private float idleCooldown;
     private float idleMovementSpeed;
+
+    [Header("Attack")]
+    public float attackRadius;
     private void Start()
     {
         basicRadius = radius;
@@ -31,6 +39,10 @@ public abstract class EntityController : MonoBehaviour
         aiDestinationSetter = GetComponent<AIDestinationSetter>();
 
         idleMovementSpeed = entitySO.movementSpeed / 1.7f;
+
+        enemyLocationSpawner = transform.parent.GetComponent<EnemyLocationSpawner>();
+
+        temporaryObjects = GameObject.Find("--Temporary--").transform;
     }
     private void Update()
     {
@@ -90,32 +102,53 @@ public abstract class EntityController : MonoBehaviour
     {
         if (idleTime < Time.time && !targetFound)
         {
-            float idleDistance = 4f;
+            Vector2 newPos;
+            int numberOfAttempts = 0;
+            do
+            {
+                float idleDistance = 5f;
 
-            float xPos = transform.localPosition.x;
-            float yPos = transform.localPosition.y;
+                float xPos = transform.position.x;
+                float yPos = transform.position.y;
 
-            float minXPos = xPos - idleDistance;
-            float maxXPos = xPos + idleDistance;
+                float minXPos = xPos - idleDistance;
+                float maxXPos = xPos + idleDistance;
 
-            float minYPos = yPos - idleDistance;
-            float maxYPos = yPos + idleDistance;
+                float minYPos = yPos - idleDistance;
+                float maxYPos = yPos + idleDistance;
 
-            float newXPos = Random.Range(minXPos, maxXPos);
-            float newYPos = Random.Range(minYPos, maxYPos);
+                float newXPos = Random.Range(minXPos, maxXPos);
+                float newYPos = Random.Range(minYPos, maxYPos);
 
-            Vector2 newPos = new Vector2(newXPos, newYPos);
+                newPos = new Vector2(newXPos, newYPos);
+
+                if (numberOfAttempts >= 5)
+                {
+                    newPos = enemyLocationSpawner.transform.position;
+                    break;
+                }
+                numberOfAttempts++;
+
+            } while (enemyLocationSpawner.RelocateEnemy(newPos));
+            
 
             GameObject newEmptyGameObject = new GameObject();
 
-            GameObject newIdleLocation = Instantiate(newEmptyGameObject, newPos, Quaternion.identity);
+            GameObject newIdleLocation = Instantiate(newEmptyGameObject, newPos, Quaternion.identity, temporaryObjects);
+
+
+            newIdleLocation.name = "New Idle Position";
 
             aiDestinationSetter.target = newIdleLocation.transform;
 
             idleCooldown = Random.Range(idleCooldownMin, idleCooldownMax);
             idleTime = Time.time + idleCooldown;
+
+            Destroy(newEmptyGameObject);
+            Destroy(newIdleLocation, 5f);
         }
     }
+
     private void RadiusChange(bool found)
     {
         if (found)
@@ -129,6 +162,7 @@ public abstract class EntityController : MonoBehaviour
     }
     private void OnDrawGizmosSelected()
     {
+        if (!showGizmos) return;
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, radius);
 

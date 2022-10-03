@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     public WeaponsSO weaponSO;
+    public Transform temporaryTransform;
     public GameObject direction;
     private CalculateAim calculateAim;
     private AttackType attackType;
@@ -60,6 +61,8 @@ public class PlayerAttack : MonoBehaviour
 
         GameObject projectileInstance = Instantiate(projectilePrefab, direction.transform.position, Quaternion.identity, null);
         Projectile projectileInstanceScript = projectileInstance.GetComponent<Projectile>();
+
+        projectileInstance.transform.parent = temporaryTransform;
 
         projectileInstanceScript.damage = weaponSO.damage;
         projectileInstanceScript.shooter = gameObject;

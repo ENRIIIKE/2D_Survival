@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [HideInInspector]
     public GameObject shooter;
     [HideInInspector] 
     public int damage;
@@ -27,15 +26,13 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
 
         }
-        if (!collision.CompareTag("Ignore") || collision.gameObject == shooter)
+        if (!collision.CompareTag("Ignore") && collision.gameObject != shooter)
         {
-            Debug.Log("Projectile collided with <color=orange>" + collision.name + " </color>"
-                , collision.gameObject);
+            Debug.Log("Projectile collided with <color=orange>" + collision.name + 
+                " </color>", collision.gameObject);
 
             Destroy(gameObject);
         }
-
-
     }
     private void Start()
     {
