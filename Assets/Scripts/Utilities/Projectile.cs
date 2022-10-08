@@ -28,8 +28,9 @@ public class Projectile : MonoBehaviour
         }
         if (!collision.CompareTag("Ignore") && collision.gameObject != shooter)
         {
-            Debug.Log("Projectile collided with <color=orange>" + collision.name + 
+            /*Debug.Log("Projectile collided with <color=orange>" + collision.name + 
                 " </color>", collision.gameObject);
+            */
 
             Destroy(gameObject);
         }
@@ -37,7 +38,5 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         Destroy(gameObject, destroyCooldown);
-
-
     }
 }
