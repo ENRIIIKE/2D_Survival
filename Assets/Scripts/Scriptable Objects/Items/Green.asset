@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Green
   m_EditorClassIdentifier: 
   name: Green Item
-  id: 0
+  id: 1
   sprite: {fileID: 0}

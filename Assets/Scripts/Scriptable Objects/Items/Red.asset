@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Red
   m_EditorClassIdentifier: 
   name: Red Item
-  id: 0
+  id: 2
   sprite: {fileID: 0}

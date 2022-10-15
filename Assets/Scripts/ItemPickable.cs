@@ -6,16 +6,6 @@ public class ItemPickable : MonoBehaviour, IInteractible
 {
     public ItemData item;
 
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
     public void Interact()
     {
 

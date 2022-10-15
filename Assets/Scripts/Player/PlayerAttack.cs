@@ -27,10 +27,12 @@ public class PlayerAttack : MonoBehaviour
             switch (attackType)
             {
                 case AttackType.Melee:
-                    MeleeAttack();
+                    //MeleeAttack();
+                    weaponSO.Attack();
                     break;
                 case AttackType.Ranged:
-                    RangedAttack();
+                    //RangedAttack();
+                    weaponSO.Attack();
                     break;
                 default:
                     Debug.LogWarning("Error has occured with the Player Attack script!", this);
@@ -38,28 +40,37 @@ public class PlayerAttack : MonoBehaviour
             }
         }
     }
+    /*
     void MeleeAttack()
     {
         if (!CanAttack()) return;
+        
+        
 
-        Collider2D[] hits = Physics2D.OverlapCircleAll(direction.transform.position, weaponSO.swingRadius, entityLayer);
+        Collider2D[] hits = Physics2D.OverlapCircleAll(direction.transform.position, 
+            weaponSO.swingRadius, entityLayer);
 
         foreach (Collider2D hit in hits)
         {
             Debug.Log(hit.name);
             //Apply Damage;
         }
-
-        attackTime = Time.time + weaponSO.attackSpeed;
+        
+        ResetAttackTime();
     }
+    */
     void RangedAttack()
     {
         if (!CanAttack()) return;
+        weaponSO.Attack();
 
+        #region Hide
+        /* 
         GameObject projectilePrefab = weaponSO.projectile;
         Vector3 directionNormalized = Vector3.Normalize(direction.transform.localPosition);
 
-        GameObject projectileInstance = Instantiate(projectilePrefab, direction.transform.position, Quaternion.identity, null);
+        GameObject projectileInstance = Instantiate(projectilePrefab, direction.transform.position, 
+            Quaternion.identity, null);
         Projectile projectileInstanceScript = projectileInstance.GetComponent<Projectile>();
 
         projectileInstance.transform.parent = temporaryTransform;
@@ -67,14 +78,16 @@ public class PlayerAttack : MonoBehaviour
         projectileInstanceScript.damage = weaponSO.damage;
         projectileInstanceScript.shooter = gameObject;
 
-        projectileInstance.GetComponent<Rigidbody2D>().AddForce(directionNormalized * weaponSO.speedOfProjectile, ForceMode2D.Impulse);
+        projectileInstance.GetComponent<Rigidbody2D>().AddForce(directionNormalized * 
+            weaponSO.speedOfProjectile, ForceMode2D.Impulse);
 
         var dir = Input.mousePosition - calculateAim.cam.WorldToScreenPoint(transform.position);
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         projectileInstance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-
-
-        attackTime = Time.time + weaponSO.attackSpeed;
+        */
+        #endregion
+        ResetAttackTime();
+        
     }
 
     private bool CanAttack()
@@ -87,5 +100,9 @@ public class PlayerAttack : MonoBehaviour
         {
             return true;
         }
+    }
+    private void ResetAttackTime()
+    {
+        attackTime = Time.time + weaponSO.attackSpeed;
     }
 }
