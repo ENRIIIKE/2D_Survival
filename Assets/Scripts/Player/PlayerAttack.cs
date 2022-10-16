@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
@@ -7,42 +5,25 @@ public class PlayerAttack : MonoBehaviour
     public WeaponsSO weaponSO;
     public Transform temporaryTransform;
     public GameObject direction;
-    private CalculateAim calculateAim;
-    private AttackType attackType;
     public LayerMask entityLayer;
 
     private float attackTime;
+    private CalculateAim calculateAim;
 
     private void Start()
     {
         calculateAim = direction.GetComponent<CalculateAim>();
-
-        attackType = weaponSO.attackType;
-
     }
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetButtonDown("Attack"))
         {
-            switch (attackType)
-            {
-                case AttackType.Melee:
-                    //MeleeAttack();
-                    weaponSO.Attack();
-                    break;
-                case AttackType.Ranged:
-                    //RangedAttack();
-                    weaponSO.Attack();
-                    break;
-                default:
-                    Debug.LogWarning("Error has occured with the Player Attack script!", this);
-                    break;
-            }
+            weaponSO.Attack();
         }
     }
-    /*
-    void MeleeAttack()
-    {
+    
+    #region Melee
+        /*
         if (!CanAttack()) return;
         
         
@@ -57,38 +38,33 @@ public class PlayerAttack : MonoBehaviour
         }
         
         ResetAttackTime();
-    }
-    */
-    void RangedAttack()
-    {
-        if (!CanAttack()) return;
-        weaponSO.Attack();
-
-        #region Hide
-        /* 
-        GameObject projectilePrefab = weaponSO.projectile;
-        Vector3 directionNormalized = Vector3.Normalize(direction.transform.localPosition);
-
-        GameObject projectileInstance = Instantiate(projectilePrefab, direction.transform.position, 
-            Quaternion.identity, null);
-        Projectile projectileInstanceScript = projectileInstance.GetComponent<Projectile>();
-
-        projectileInstance.transform.parent = temporaryTransform;
-
-        projectileInstanceScript.damage = weaponSO.damage;
-        projectileInstanceScript.shooter = gameObject;
-
-        projectileInstance.GetComponent<Rigidbody2D>().AddForce(directionNormalized * 
-            weaponSO.speedOfProjectile, ForceMode2D.Impulse);
-
-        var dir = Input.mousePosition - calculateAim.cam.WorldToScreenPoint(transform.position);
-        var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        projectileInstance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
         */
         #endregion
-        ResetAttackTime();
-        
-    }
+
+    #region Ranged
+    /*
+    GameObject projectilePrefab = weaponSO.projectile;
+    Vector3 directionNormalized = Vector3.Normalize(direction.transform.localPosition);
+
+    GameObject projectileInstance = Instantiate(projectilePrefab, direction.transform.position, 
+        Quaternion.identity, null);
+    Projectile projectileInstanceScript = projectileInstance.GetComponent<Projectile>();
+
+    projectileInstance.transform.parent = temporaryTransform;
+
+    projectileInstanceScript.damage = weaponSO.damage;
+    projectileInstanceScript.shooter = gameObject;
+
+    projectileInstance.GetComponent<Rigidbody2D>().AddForce(directionNormalized * 
+        weaponSO.speedOfProjectile, ForceMode2D.Impulse);
+
+    var dir = Input.mousePosition - calculateAim.cam.WorldToScreenPoint(transform.position);
+    var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
+    projectileInstance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+    ResetAttackTime();
+    */
+    #endregion
+
 
     private bool CanAttack()
     {

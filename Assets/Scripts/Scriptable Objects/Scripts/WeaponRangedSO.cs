@@ -11,6 +11,5 @@ public class WeaponRangedSO : WeaponsSO
     public override void Attack()
     {
         base.Attack();
-
     }
 }
