@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de7ab70cadff1840b03913d96f9e352, type: 3}
   m_Name: Bow
   m_EditorClassIdentifier: 
-  name: Bow
-  id: 0
-  attackType: 1
-  damage: 0
-  attackSpeed: 3
+  itemName: Basic Bow
+  id: 1
+  damage: 3
+  attackSpeed: 0.6
+  entityLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   projectile: {fileID: 7472786199028740957, guid: 0932fb20211049443b8d8254f5c37a13, type: 3}
-  speedOfProjectile: 3
+  speedOfProjectile: 15

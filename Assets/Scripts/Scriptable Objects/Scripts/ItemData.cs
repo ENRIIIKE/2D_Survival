@@ -13,4 +13,8 @@ public class ItemData : ScriptableObject
     //Item sprite
     //public Sprite sprite = null;
 
+    private void OnValidate()
+    {
+        itemName = name;
+    }
 }

@@ -40,7 +40,7 @@ public class EntityFocusScript : MonoBehaviour
         EntityHealth entityHealthSystem = entityFound.GetComponent<EntityHealth>();
 
         entityText.text = entityFound.name;
-        entityBar.value = entityHealthSystem.Health;
+        entityBar.value = entityHealthSystem.health;
         entityBar.maxValue = entityHealthSystem.maxHealth;
     }
 }

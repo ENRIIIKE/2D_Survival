@@ -6,8 +6,11 @@ public class WeaponsSO : ItemData
     public int damage;
     public float attackSpeed;
 
-    public virtual void Attack()
+    [Header("Entity Layer")]
+    public LayerMask entityLayer;
+
+    public virtual void Attack(PlayerAttack playerAttack)
     {
-        Debug.Log("Using: " + itemName);
+        //Code
     }
 }

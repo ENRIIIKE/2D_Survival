@@ -3,13 +3,7 @@ using UnityEngine;
 public abstract class HealthSystem : MonoBehaviour, IDamagable
 {
     [Header("General")]
-    private int health;
-
-    public int Health
-    {
-        get { return health; }
-        private set { health = value; }
-    }
+    public int health;
 
     public int maxHealth;
 
@@ -17,33 +11,32 @@ public abstract class HealthSystem : MonoBehaviour, IDamagable
 
     private void Awake()
     {
-        Health = maxHealth;
+        health = maxHealth;
     }
-    public void GetDamage(int damage, GameObject attacker)
+    public void GetDamage(int damage)
     {
-        if (damage > Health)
+        if (damage > health)
         {
-            Health = 0;
+            health = 0;
         }
         else
         {
-            Health -= damage;
+            health -= damage;
+
+
+            Debug.LogFormat("<color=white><b>Damage Debug</b> </color> " +
+                "\n " +
+                "\n{0} Damage Taken: {1} " +
+                "\nRemaining Health: {2} "
+                , gameObject.name, damage, health);
+
+            UpdateSlider(health);
+            CheckHealthState();
         }
-
-
-        Debug.LogFormat("<color=white><b>Damage Debug</b> </color> " +
-            "\n " +
-            "\n{0} Damage Taken: {1} " +
-            "\nRemaining Health: {2} " +
-            "\nAttacker: {3}" 
-            , gameObject.name, damage, Health, attacker.name);
-
-        UpdateSlider(Health);
-        CheckHealthState();
     }
     private void CheckHealthState()
     {
-        if (Health <= 0)
+        if (health <= 0)
         {
             isDead = true;
 

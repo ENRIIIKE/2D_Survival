@@ -1,42 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public GameObject shooter;
+    public Transform shooter;
+    public Vector2 startPosition;
+
     [HideInInspector] 
     public int damage;
 
     public float destroyCooldown;
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.GetComponent<IDamagable>() != null && collision.gameObject != shooter)
+        if (collision.GetComponent<IDamagable>() != null)
         {
+            if (IgnorePlayer(collision)) return;
+
             IDamagable damagable = collision.GetComponent<IDamagable>();
-            damagable.GetDamage(damage, shooter);
+            damagable.GetDamage(damage);
 
             Vector2 lastPosition = transform.position;
 
-            Debug.DrawLine(shooter.transform.position, lastPosition, 
+            Debug.DrawLine(startPosition, lastPosition, 
                 Color.yellow, destroyCooldown);
 
-            Destroy(gameObject);
-
         }
-        if (!collision.CompareTag("Ignore") && collision.gameObject != shooter)
-        {
-            /*Debug.Log("Projectile collided with <color=orange>" + collision.name + 
-                " </color>", collision.gameObject);
-            */
 
+        if (!collision.CompareTag("Ignore"))
+        {
             Destroy(gameObject);
         }
     }
-    private void Start()
+
+    private bool IgnorePlayer(Collider2D collision)
     {
+        if (collision.tag == shooter.tag)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private void OnEnable()
+    {
+        transform.parent = GameObject.Find("--Temporary--").transform;
+        startPosition = transform.position;
+
         Destroy(gameObject, destroyCooldown);
     }
 }

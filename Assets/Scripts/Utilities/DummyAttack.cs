@@ -27,7 +27,7 @@ public class DummyAttack : MonoBehaviour
 
             Projectile projectileInstanceScript = projectileInstance.GetComponent<Projectile>();
             projectileInstanceScript.damage = damage;
-            projectileInstanceScript.shooter = gameObject;
+            projectileInstanceScript.shooter = transform;
 
             projectileInstance.GetComponent<Rigidbody2D>().AddForce(transform.right * projectileSpeed, ForceMode2D.Impulse);
 

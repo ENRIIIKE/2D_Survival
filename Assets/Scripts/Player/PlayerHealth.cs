@@ -9,7 +9,7 @@ public class PlayerHealth : HealthSystem
     void Start()
     {
         healthSlider.maxValue = maxHealth;
-        UpdateSlider(Health);
+        UpdateSlider(health);
     }
 
     public override void UpdateSlider(int health)
