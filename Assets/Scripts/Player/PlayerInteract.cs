@@ -19,7 +19,6 @@ public class PlayerInteract : MonoBehaviour
             Collider2D collider = Physics2D.OverlapCircle(transform.position,
                 radius, layerMask);
 
-            Debug.Log("Found: " + collider.gameObject.name);
 
             if (collider != null)
             {

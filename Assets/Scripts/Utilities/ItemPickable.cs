@@ -8,6 +8,7 @@ public class ItemPickable : MonoBehaviour, IInteractible
 
     public void Interact()
     {
+        Inventory.instance.Add(item);
 
         Destroy(gameObject);
     }
