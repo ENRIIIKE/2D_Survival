@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetButtonDown("Attack"))
         {
+            if (EventSystem.current.IsPointerOverGameObject()) return;
             if (!CanAttack()) return;
             weaponSO.Attack(this);
             ResetAttackTime();

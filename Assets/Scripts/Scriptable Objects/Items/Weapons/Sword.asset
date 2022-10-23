@@ -9,9 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ed6c8db1a21ece2438fa26a1b468807e, type: 3}
-  m_Name: Green
+  m_Script: {fileID: 11500000, guid: 874da0d848f8b50458043b80e5f6113b, type: 3}
+  m_Name: Sword
   m_EditorClassIdentifier: 
-  name: Green Item
+  itemName: Sword
   id: 1
-  sprite: {fileID: 0}
+  sprite: {fileID: -1733675241, guid: e7468f9bfdf0264498049cfaa9740d89, type: 3}
+  damage: 6
+  attackSpeed: 3
+  entityLayer:
+    serializedVersion: 2
+    m_Bits: 1024
+  swingRadius: 0

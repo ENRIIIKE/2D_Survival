@@ -20,24 +20,23 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
 
-    private void Start()
-    {
-        inventoryCallback += UpdateUI;
-
-    }
-
-    [ExecuteInEditMode]
-    public virtual void UpdateUI()
-    {
-        //Update Icons
-
-    }
     public void Add(ItemData item)
     {
         items.Add(item);
+
+        if (inventoryCallback != null)
+        {
+            inventoryCallback.Invoke();
+        }
     }
     public void Remove(ItemData item)
     {
         items.Remove(item);
+
+        if (inventoryCallback != null)
+        {
+            inventoryCallback.Invoke();
+        }
     }
+    
 }

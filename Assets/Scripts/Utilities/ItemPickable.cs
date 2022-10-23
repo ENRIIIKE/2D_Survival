@@ -5,11 +5,20 @@ using UnityEngine;
 public class ItemPickable : MonoBehaviour, IInteractible
 {
     public ItemData item;
-
     public void Interact()
     {
         Inventory.instance.Add(item);
 
         Destroy(gameObject);
+    }
+
+    [ContextMenu("Change Sprite of the Object")]
+    void ChangeSprite()
+    {
+        GetComponent<SpriteRenderer>().sprite = item.sprite;
+    }
+    private void Awake()
+    {
+        name = "Pickable: " + item.itemName;
     }
 }

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class WeaponsSO : ItemData
+public class WeaponsSO : Equipment
 {
     [Header("Weapon Stats")]
     public int damage;

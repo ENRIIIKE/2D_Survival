@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1de7ab70cadff1840b03913d96f9e352, type: 3}
-  m_Name: Steel Bow
+  m_Name: Bow
   m_EditorClassIdentifier: 
-  itemName: Steel Bow
-  id: 2
-  damage: 12
+  itemName: Bow
+  id: 1
+  sprite: {fileID: -59502482, guid: e7468f9bfdf0264498049cfaa9740d89, type: 3}
+  damage: 3
   attackSpeed: 0.6
   entityLayer:
     serializedVersion: 2
