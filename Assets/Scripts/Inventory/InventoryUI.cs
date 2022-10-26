@@ -7,11 +7,16 @@ public class InventoryUI : MonoBehaviour
     private Inventory inventory;
 
     public Transform inventoryTransform;
+    public Transform equipmentTransform;
 
     [SerializeField]
     private InventorySlots[] inventorySlots;
+    [SerializeField]
+    private EquipmentSlots[] equipmentSlots;
 
     public GameObject panel;
+
+
 
     private void Start()
     {
@@ -21,6 +26,7 @@ public class InventoryUI : MonoBehaviour
         panel.SetActive(false);
 
         inventorySlots = inventoryTransform.GetComponentsInChildren<InventorySlots>();
+        equipmentSlots = equipmentTransform.GetComponentsInChildren<EquipmentSlots>();
     }
     void Update()
     {

@@ -14,6 +14,7 @@ public class Inventory : MonoBehaviour
 
     public List<ItemData> items = new List<ItemData>();
 
+
     private void Awake()
     {
         if (instance != null) return;

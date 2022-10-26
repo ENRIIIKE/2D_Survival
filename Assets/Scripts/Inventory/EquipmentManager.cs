@@ -18,6 +18,9 @@ public class EquipmentManager : MonoBehaviour
     [SerializeField]
     private Equipment[] currentEquipment;
 
+    public delegate void EquipmentCallback();
+    public EquipmentCallback inventoryCallback;
+
     private void Start()
     {
         inventory = Inventory.instance;
