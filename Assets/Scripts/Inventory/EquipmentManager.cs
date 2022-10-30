@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditorInternal.Profiling.Memory.Experimental;
 using UnityEngine;
 
 public enum EquipmentType { Helmet, Chest, Legs, Boots, Weapon }
@@ -14,16 +15,20 @@ public class EquipmentManager : MonoBehaviour
     #endregion
 
     private Inventory inventory;
+    public Transform equipmentTransform;
 
+    public Equipment[] currentEquipment;
     [SerializeField]
-    private Equipment[] currentEquipment;
+    private EquipmentSlots[] equipmentSlots;
 
+    //This delegate will be also used to update character stats..
     public delegate void EquipmentCallback();
-    public EquipmentCallback inventoryCallback;
+    public EquipmentCallback equipmentCallback;
 
     private void Start()
     {
         inventory = Inventory.instance;
+        equipmentSlots = equipmentTransform.GetComponentsInChildren<EquipmentSlots>();
 
         int numSlots = System.Enum.GetNames(typeof(EquipmentType)).Length;
         currentEquipment = new Equipment[numSlots];
@@ -43,6 +48,12 @@ public class EquipmentManager : MonoBehaviour
         }
 
         currentEquipment[slotIndex] = newItem;
+
+        //Update Sprites, etc..
+        equipmentSlots[slotIndex].AddItem(newItem);
+
+        //Update Stats
+        equipmentCallback.Invoke();
     }
 
     public void UnEquip(int slotIndex)
@@ -54,5 +65,11 @@ public class EquipmentManager : MonoBehaviour
 
             currentEquipment[slotIndex] = null;
         }
+
+        //Update Sprites, etc..
+        equipmentSlots[slotIndex].RemoveItem();
+
+        //Update Stats
+        equipmentCallback.Invoke();
     }
 }

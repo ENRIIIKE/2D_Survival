@@ -7,7 +7,7 @@ public enum ItemType { Equipment, Food}
 public class ItemData : ScriptableObject
 {
 
-    [Header("General")]
+    [Header("Item Data")]
     //Name of the item
     public string itemName = "Enter name of the item";
     //Item ID
@@ -21,8 +21,8 @@ public class ItemData : ScriptableObject
     {
         itemName = name;
     }
-    public virtual void Use()
+    public virtual void UseUI()
     {
-
+        //Code
     }
 }

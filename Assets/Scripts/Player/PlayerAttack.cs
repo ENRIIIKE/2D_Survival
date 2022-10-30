@@ -3,7 +3,10 @@ using UnityEngine.EventSystems;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public WeaponsSO weaponSO;
+    private EquipmentManager equipmentManager;
+    [SerializeField]
+    private WeaponsSO activeWeapon;
+
     public GameObject direction;
 
     [HideInInspector] 
@@ -14,15 +17,22 @@ public class PlayerAttack : MonoBehaviour
     private void Start()
     {
         calculateAim = direction.GetComponent<CalculateAim>();
+        equipmentManager = EquipmentManager.instance;
+
+        equipmentManager.equipmentCallback += UpdateActiveWeapon;
     }
     void Update()
     {
         if (Input.GetButtonDown("Attack"))
         {
+            //Try to optimize these IFs
+            if (activeWeapon == null) return;
             if (EventSystem.current.IsPointerOverGameObject()) return;
             if (!CanAttack()) return;
-            weaponSO.Attack(this);
-            ResetAttackTime();
+
+            activeWeapon.UseOne(this);
+
+            attackTime = Time.time + activeWeapon.attackSpeed;
         }
     }
     private bool CanAttack()
@@ -36,8 +46,10 @@ public class PlayerAttack : MonoBehaviour
             return true;
         }
     }
-    private void ResetAttackTime()
+
+    public void UpdateActiveWeapon()
     {
-        attackTime = Time.time + weaponSO.attackSpeed;
+        activeWeapon = (WeaponsSO)equipmentManager.currentEquipment[4];
     }
+
 }

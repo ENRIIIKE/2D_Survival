@@ -12,13 +12,10 @@ public class ItemPickable : MonoBehaviour, IInteractible
         Destroy(gameObject);
     }
 
-    [ContextMenu("Change Sprite of the Object")]
-    void ChangeSprite()
+    [ContextMenu("Update Object")]
+    void UpdateObject()
     {
         GetComponent<SpriteRenderer>().sprite = item.sprite;
-    }
-    private void Awake()
-    {
         name = "Pickable: " + item.itemName;
     }
 }

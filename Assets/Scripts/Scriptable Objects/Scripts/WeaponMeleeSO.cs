@@ -9,9 +9,9 @@ public class WeaponMeleeSO : WeaponsSO
     [Header("Melee Weapon Stats")]
     public float swingRadius;
 
-    public override void Attack(PlayerAttack playerAttack)
+    public override void UseOne(PlayerAttack playerAttack)
     {
-        base.Attack(playerAttack);
+        base.UseOne(playerAttack);
 
         GameObject direction = playerAttack.direction;
         Collider2D[] hits = Physics2D.OverlapCircleAll(direction.transform.position,
@@ -26,5 +26,6 @@ public class WeaponMeleeSO : WeaponsSO
             damagable.GetDamage(damage);
 
         }
+        
     }
 }

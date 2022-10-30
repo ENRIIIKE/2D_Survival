@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Equipment : ItemData
 {
+    [Header("Equipment")]
     public EquipmentType equipmentType;
 
     private void Awake()
@@ -11,10 +12,14 @@ public class Equipment : ItemData
         itemType = ItemType.Equipment;
     }
 
-    public override void Use()
+    public override void UseUI()
     {
-        base.Use();
+        base.UseUI();
         EquipmentManager.instance.Equip(this);
+        Inventory.instance.Remove(this);
     }
-
+    public virtual void UseOne(PlayerAttack playerAttack)
+    {
+        //Code
+    }
 }

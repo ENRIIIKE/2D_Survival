@@ -9,9 +9,9 @@ public class WeaponRangedSO : WeaponsSO
     public GameObject projectile;
     public float speedOfProjectile;
 
-    public override void Attack(PlayerAttack playerAttack)
+    public override void UseOne(PlayerAttack playerAttack)
     {
-        base.Attack(playerAttack);
+        base.UseOne(playerAttack);
 
         GameObject projectilePrefab = projectile;
         GameObject direction = playerAttack.direction;
@@ -33,4 +33,5 @@ public class WeaponRangedSO : WeaponsSO
         var angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
         projectileInstance.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
+
 }

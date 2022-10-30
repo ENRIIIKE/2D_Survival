@@ -37,11 +37,13 @@ public class InventorySlots : MonoBehaviour
     {
         Inventory.instance.Remove(itemData);
     }
+
+    //Inventory UI Button is using this function
     public void UseItem()
     {
         if (itemData != null)
         {
-            itemData.Use();
+            itemData.UseUI();
         }
     }
 }

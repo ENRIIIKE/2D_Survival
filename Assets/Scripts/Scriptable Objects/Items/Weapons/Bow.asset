@@ -15,6 +15,8 @@ MonoBehaviour:
   itemName: Bow
   id: 1
   sprite: {fileID: -59502482, guid: e7468f9bfdf0264498049cfaa9740d89, type: 3}
+  itemType: 0
+  equipmentType: 4
   damage: 3
   attackSpeed: 0.6
   entityLayer:

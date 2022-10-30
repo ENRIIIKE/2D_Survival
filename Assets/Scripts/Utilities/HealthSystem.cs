@@ -25,14 +25,14 @@ public abstract class HealthSystem : MonoBehaviour, IDamagable
 
 
             Debug.LogFormat("<color=white><b>Damage Debug</b> </color> " +
-                "\n " +
-                "\n{0} Damage Taken: {1} " +
+                "\n{0} " +
+                "\nDamage Taken: {1} " +
                 "\nRemaining Health: {2} "
                 , gameObject.name, damage, health);
 
-            UpdateSlider(health);
-            CheckHealthState();
         }
+        UpdateSlider(health);
+        CheckHealthState();
     }
     private void CheckHealthState()
     {
