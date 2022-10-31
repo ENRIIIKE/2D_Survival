@@ -1,18 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Pathfinding;
 
 public abstract class EntityController : MonoBehaviour
 {
     public EntitySO entitySO;
-    [HideInInspector] 
-    public EnemyLocationSpawner enemyLocationSpawner;
     public Transform temporaryObjects;
 
-    [Header("Pathfinder")]
-    private AIPath aiPath;
-    private AIDestinationSetter aiDestinationSetter;
 
     [Header("Target Finding")]
     public float radius;
@@ -35,19 +29,15 @@ public abstract class EntityController : MonoBehaviour
     private void Start()
     {
         basicRadius = radius;
-        aiPath = GetComponent<AIPath>();
-        aiDestinationSetter = GetComponent<AIDestinationSetter>();
 
         idleMovementSpeed = entitySO.movementSpeed / 1.7f;
-
-        enemyLocationSpawner = transform.parent.GetComponent<EnemyLocationSpawner>();
 
         temporaryObjects = GameObject.Find("--Temporary--").transform;
     }
     private void Update()
     {
         FindTarget();
-        IdleMove();
+        //IdleMove();
     }
     public abstract void Move();
 
@@ -62,8 +52,7 @@ public abstract class EntityController : MonoBehaviour
 
             if (targetCollider == null)
             {   
-                aiPath.maxSpeed = idleMovementSpeed;
-                StopPathfinding();
+                //StopPathfinding();
                 RadiusChange(false);
             }
 
@@ -71,8 +60,7 @@ public abstract class EntityController : MonoBehaviour
             {
                 GameObject target = targetCollider.gameObject;
 
-                aiPath.maxSpeed = entitySO.movementSpeed;
-                StartPathfinding(target);
+                //StartPathfinding(target);
                 RadiusChange(true);
             }
         }
@@ -81,23 +69,8 @@ public abstract class EntityController : MonoBehaviour
 
         }
     }
-
-    private void StartPathfinding(GameObject target)
-    {
-        aiDestinationSetter.target = target.transform;
-        targetFound = true;
-    }
-    private void StopPathfinding()
-    {
-        aiDestinationSetter.target = null;
-        targetFound = false;
-    }
-
-    public void SuspendAttack()
-    {
-
-    }
-
+    #region Hide
+    /*
     public void IdleMove()
     {
         if (idleTime < Time.time && !targetFound)
@@ -148,7 +121,8 @@ public abstract class EntityController : MonoBehaviour
             Destroy(newIdleLocation, 5f);
         }
     }
-
+    */
+    #endregion
     private void RadiusChange(bool found)
     {
         if (found)

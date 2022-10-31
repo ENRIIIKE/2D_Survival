@@ -19,13 +19,10 @@ public class WeaponMeleeSO : WeaponsSO
 
         foreach (Collider2D hit in hits)
         {
-            Debug.Log(hit.name);
-            
             IDamagable damagable = hit.GetComponent<IDamagable>();
 
             damagable.GetDamage(damage);
 
         }
-        
     }
 }

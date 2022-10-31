@@ -23,13 +23,13 @@ public abstract class HealthSystem : MonoBehaviour, IDamagable
         {
             health -= damage;
 
-
+            /*
             Debug.LogFormat("<color=white><b>Damage Debug</b> </color> " +
                 "\n{0} " +
                 "\nDamage Taken: {1} " +
                 "\nRemaining Health: {2} "
                 , gameObject.name, damage, health);
-
+            */
         }
         UpdateSlider(health);
         CheckHealthState();

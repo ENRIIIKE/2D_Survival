@@ -15,9 +15,11 @@ MonoBehaviour:
   itemName: Sword
   id: 1
   sprite: {fileID: -1733675241, guid: e7468f9bfdf0264498049cfaa9740d89, type: 3}
+  itemType: 0
+  equipmentType: 4
   damage: 6
-  attackSpeed: 3
+  attackSpeed: 1
   entityLayer:
     serializedVersion: 2
     m_Bits: 1024
-  swingRadius: 0
+  swingRadius: 0.3

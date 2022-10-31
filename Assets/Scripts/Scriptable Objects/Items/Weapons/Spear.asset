@@ -22,4 +22,4 @@ MonoBehaviour:
   entityLayer:
     serializedVersion: 2
     m_Bits: 1024
-  swingRadius: 0
+  swingRadius: 0.4
