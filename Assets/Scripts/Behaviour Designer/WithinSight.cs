@@ -5,7 +5,7 @@ using BehaviorDesigner.Runtime.Tasks;
 public class WithinSight : Conditional
 {
     // How wide of an angle the object can see
-    public float attackDistance;
+    public SharedFloat seekDistance;
     // The tag of the targets
     public string targetTag;
     // Set the target variable when a target has been found so the subsequent tasks know which object is the target
@@ -30,7 +30,7 @@ public class WithinSight : Conditional
         // Return success if a target is within sight
         for (int i = 0; i < possibleTargets.Length; ++i)
         {
-            if (WithinSightBool(possibleTargets[i], attackDistance))
+            if (WithinSightBool(possibleTargets[i], seekDistance.Value))
             {
                 // Set the target so other tasks will know which transform is within sight
                 target.Value = possibleTargets[i];

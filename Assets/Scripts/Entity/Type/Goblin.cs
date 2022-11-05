@@ -6,10 +6,10 @@ public class Goblin : EntityController
 {
     public override void Move()
     {
-        throw new System.NotImplementedException();
+
     }
     public override void Attack()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("Goblin attack");
     }
 }
