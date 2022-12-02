@@ -6002,16 +6002,17 @@ MonoBehaviour:
       parentIndex: 
       startIndex: 
       variableStartIndex: 
-      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(296,281)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(1.5,132)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,120)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"WithinSight","NodeData":{"Offset":"(-190,170)"},"ID":3,"Name":"Within
+      JSONSerialization: '{"EntryTask":{"Type":"BehaviorDesigner.Runtime.Tasks.EntryTask","NodeData":{"Offset":"(296,281)"},"ID":0,"Name":"Entry","Instant":true},"RootTask":{"Type":"BehaviorDesigner.Runtime.Tasks.Repeater","NodeData":{"Offset":"(1.5,132)"},"ID":1,"Name":"Repeater","Instant":true,"SharedIntcount":{"Type":"BehaviorDesigner.Runtime.SharedInt","Name":null,"Int32mValue":0},"SharedBoolrepeatForever":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":true},"SharedBoolendOnFailure":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"Children":[{"Type":"BehaviorDesigner.Runtime.Tasks.Sequence","NodeData":{"Offset":"(0,120)"},"ID":2,"Name":"Sequence","Instant":true,"AbortTypeabortType":"None","Children":[{"Type":"WithinSight","NodeData":{"Offset":"(-200,180)"},"ID":3,"Name":"Within
         Sight","Instant":true,"SharedFloatseekDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Seek
         Distance","IsShared":true,"SinglemValue":5},"StringtargetTag":"Player","SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true}},{"Type":"MoveTowards","NodeData":{"Offset":"(30,170)","WatchedFields":["speed"]},"ID":4,"Name":"Move
         Towards","Instant":true,"SharedFloatattackDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
         Distance","IsShared":true,"SinglemValue":1.4},"SharedFloatseekDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Seek
-        Distance","IsShared":true,"SinglemValue":5},"Singlespeed":2,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true}},{"Type":"AttackCooldown","NodeData":{"Offset":"(320,170)"},"ID":5,"Name":"Attack
-        Cooldown","Instant":true,"SinglecooldownTime":0,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":null}},{"Type":"Attack","NodeData":{"Offset":"(460,170)","WatchedFields":["attackDistance"]},"ID":6,"Name":"Attack","Instant":true,"SharedFloatattackDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
+        Distance","IsShared":true,"SinglemValue":5},"Singlespeed":2,"SharedTransformtarget":{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true}},{"Type":"BehaviorDesigner.Runtime.Tasks.Wait","NodeData":{"Offset":"(237.5,165)","WatchedFields":["waitTime"]},"ID":5,"Name":"Wait","Instant":true,"SharedFloatwaitTime":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
+        Cooldown","IsShared":true,"SinglemValue":1.5},"SharedBoolrandomWait":{"Type":"BehaviorDesigner.Runtime.SharedBool","Name":null,"BooleanmValue":false},"SharedFloatrandomWaitMin":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1},"SharedFloatrandomWaitMax":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":null,"SinglemValue":1}},{"Type":"Attack","NodeData":{"Offset":"(660,170)","WatchedFields":["attackDistance"]},"ID":6,"Name":"Attack","Instant":true,"SharedFloatattackDistance":{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
         Distance","IsShared":true,"SinglemValue":1.4}}]}]},"Variables":[{"Type":"BehaviorDesigner.Runtime.SharedTransform","Name":"Target","IsShared":true},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
         Distance","IsShared":true,"SinglemValue":1.4},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Seek
-        Distance","IsShared":true,"SinglemValue":5}]}'
+        Distance","IsShared":true,"SinglemValue":5},{"Type":"BehaviorDesigner.Runtime.SharedFloat","Name":"Attack
+        Cooldown","IsShared":true,"SinglemValue":1.5}]}'
       fieldSerializationData:
         typeName: []
         fieldNameHash: 
@@ -6036,16 +6037,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   entitySO: {fileID: 11400000, guid: 0c70e4854f4f90147a6344b6c8350aaf, type: 2}
-  temporaryObjects: {fileID: 0}
-  behaviour: {fileID: 39236994763344472}
-  radius: 0
-  radiusWhenFound: 0
-  targetLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  targetFound: 0
-  showGizmos: 0
-  attackRadius: 0
+  attackCooldown: 2
+  attackDistance: 2
+  seekDistance: 6
 --- !u!4 &39236995781526248
 Transform:
   m_ObjectHideFlags: 0

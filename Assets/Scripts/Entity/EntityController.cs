@@ -1,30 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using BehaviorDesigner.Runtime;
 
 public abstract class EntityController : MonoBehaviour
 {
-    public EntitySO entitySO;
-    public Transform temporaryObjects;
-    public Behaviour behaviour;
+    [Header("General")]
+    public EntitySO entitySo;
+    private Transform temporaryObjects;
+    private BehaviorTree behaviourTree;
 
     [Header("Target Finding")]
-    public float radius;
-    public float radiusWhenFound;
-    public LayerMask targetLayer;
-    public bool targetFound;
+    [SerializeField, Tooltip("Wait till entity can attack again")] private float attackCooldown;
+    [SerializeField, Tooltip("How far can entity be to attack the player")] private float attackDistance;
+    [SerializeField, Tooltip("Entity will spot player within entered distance")] private float seekDistance;
 
-    public bool showGizmos = false;
+    //[Space]
+    //[SerializeField] private bool showGizmos = false;
 
 
-    [Header("Attack")]
-    public float attackRadius;
-    private void Start()
+    private void Awake()
     {
         temporaryObjects = GameObject.Find("--Temporary--").transform;
-    }
+        behaviourTree = GetComponent<BehaviorTree>();
 
-    public abstract void Move();
+        behaviourTree.SetVariableValue("Attack Cooldown", attackCooldown);
+        behaviourTree.SetVariableValue("Attack Distance", attackDistance);
+        behaviourTree.SetVariableValue("Seek Distance", seekDistance);
+    }
 
     public abstract void Attack();
 

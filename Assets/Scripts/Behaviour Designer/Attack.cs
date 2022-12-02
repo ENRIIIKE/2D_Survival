@@ -1,11 +1,10 @@
-using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
 
 public class Attack : Action
 {
     public SharedFloat attackDistance;
-    // To controll Attack Function
+    // To control Attack Function
     private EntityController controller;
 
     public override void OnAwake()
