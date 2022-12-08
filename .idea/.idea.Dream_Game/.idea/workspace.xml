@@ -4,15 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="939ede9d-1a7c-4918-9dea-2cc8dae035f6" name="Changes" comment="First Rider Commit">
+    <list default="true" id="939ede9d-1a7c-4918-9dea-2cc8dae035f6" name="Changes" comment="Second experiment">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Attack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Attack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/MoveTowards.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/MoveTowards.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn Location #1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn Location #1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/Type/Goblin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/Type/Goblin.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/Type.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/Type/Goblin.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/Type/Goblin.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Scripts/EntitySO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Scripts/EntitySO.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Skeleton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Skeleton.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/EnemyLocationSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/EnemyLocationSpawner.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +27,8 @@
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/86acb61e0d2b4b36bc20af11093be9a5157e00/b5/4c62fae5/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://D:/GitHub/Dream_Game/Assets/Scripts/Behaviour Designer/Attack.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -38,20 +42,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Discover.Launch.Via.Unity&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Discover.Launch.Via.Unity": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "CodeLensConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
     <configuration name="UnitTests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Unity.exe" />
@@ -96,7 +100,7 @@
       <workItem from="1670015168066" duration="791000" />
       <workItem from="1670445453368" duration="720000" />
       <workItem from="1670532229482" duration="599000" />
-      <workItem from="1670535996818" duration="4599000" />
+      <workItem from="1670535996818" duration="6390000" />
     </task>
     <task id="LOCAL-00001" summary="First Rider Commit">
       <created>1670538573464</created>
@@ -105,7 +109,21 @@
       <option name="project" value="LOCAL" />
       <updated>1670538573464</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Experimenting with behaviour trees.&#10;&#10;Trying to make it more universal for making enemies.">
+      <created>1670540814960</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1670540814960</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Second experiment">
+      <created>1670540867950</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1670540867950</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,7 +146,9 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="First Rider Commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="First Rider Commit" />
+    <MESSAGE value="Experimenting with behaviour trees.&#10;&#10;Trying to make it more universal for making enemies." />
+    <MESSAGE value="Second experiment" />
+    <option name="LAST_COMMIT_MESSAGE" value="Second experiment" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

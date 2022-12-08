@@ -18,5 +18,5 @@ MonoBehaviour:
   entityAttackType: 0
   movementSpeed: 3
   attackSpeed: 1.4
-  attackDistance: 2
+  attackDistance: 1.2
   seekDistance: 6

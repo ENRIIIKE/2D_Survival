@@ -1,7 +1,7 @@
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 
-public abstract class EntityController : MonoBehaviour
+public class EntityController : MonoBehaviour
 {
     [Header("General")]
     public EntitySo entitySo;
@@ -10,11 +10,6 @@ public abstract class EntityController : MonoBehaviour
     [Header("Behaviour Tree")] 
     private BehaviorTree behaviourTree;
     
-
-    //[Space]
-    //[SerializeField] private bool showGizmos = false;
-
-
     private void Awake()
     {
         temporaryObjects = GameObject.Find("--Temporary--").transform;
@@ -26,6 +21,9 @@ public abstract class EntityController : MonoBehaviour
         behaviourTree.SetVariableValue("Seek Distance", entitySo.seekDistance);
     }
 
-    public abstract void Attack();
-
+    public void Attack()
+    {
+        //Attack code
+        Debug.Log(entitySo.name + " is attacking.");
+    }
 }
