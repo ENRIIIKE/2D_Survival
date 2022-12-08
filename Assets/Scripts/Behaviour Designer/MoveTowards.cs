@@ -15,7 +15,7 @@ public class MoveTowards : Action
     private SharedFloat seekDistance;
     // The speed of the object
     [SerializeField]
-    private SharedFloat speed;
+    private SharedFloat movementSpeed;
     // The transform that the object is moving towards
     [SerializeField]
     private SharedTransform target;
@@ -36,7 +36,7 @@ public class MoveTowards : Action
         }
 
         // We haven't reached the target yet so keep moving towards it
-        transform.position = Vector3.MoveTowards(transform.position, target.Value.position, speed.Value * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.Value.position, movementSpeed.Value * Time.deltaTime);
         return TaskStatus.Running;
     }
 }

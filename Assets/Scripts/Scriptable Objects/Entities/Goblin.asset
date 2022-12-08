@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityName: Goblin
   entityID: 0
-  description: Basic enemy for testing.
+  description: Basic melee  enemy.
   entityAttackType: 0
   movementSpeed: 3
-  attackType: 0.6
-  damage: 3
+  attackSpeed: 1.4
+  attackDistance: 2
+  seekDistance: 6
