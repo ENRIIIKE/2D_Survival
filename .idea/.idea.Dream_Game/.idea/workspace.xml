@@ -4,19 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="939ede9d-1a7c-4918-9dea-2cc8dae035f6" name="Changes" comment="Second experiment">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn Location #1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Enemy Spawn Location #1.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/Type.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/Type/Goblin.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/Type/Goblin.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Skeleton.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Skeleton.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/EnemyLocationSpawner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/EnemyLocationSpawner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-    </list>
+    <list default="true" id="939ede9d-1a7c-4918-9dea-2cc8dae035f6" name="Changes" comment="Continuously experimenting" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,7 +88,7 @@
       <workItem from="1670015168066" duration="791000" />
       <workItem from="1670445453368" duration="720000" />
       <workItem from="1670532229482" duration="599000" />
-      <workItem from="1670535996818" duration="6390000" />
+      <workItem from="1670535996818" duration="6458000" />
     </task>
     <task id="LOCAL-00001" summary="First Rider Commit">
       <created>1670538573464</created>
@@ -123,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670540867950</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Continuously experimenting">
+      <created>1670542507897</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1670542507897</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,7 +143,8 @@
     <MESSAGE value="First Rider Commit" />
     <MESSAGE value="Experimenting with behaviour trees.&#10;&#10;Trying to make it more universal for making enemies." />
     <MESSAGE value="Second experiment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Second experiment" />
+    <MESSAGE value="Continuously experimenting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Continuously experimenting" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

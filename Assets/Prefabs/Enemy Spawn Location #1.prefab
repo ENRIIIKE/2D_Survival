@@ -46,11 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData:
-  - enemyPrefab: {fileID: 6596949326159250648, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
-    enemyAmount: 2
-  - enemyPrefab: {fileID: 2196045503130974740, guid: 542ad7de0ae13b144baf96a22c0cef6f, type: 3}
-    enemyAmount: 2
-  insideRadius: 5.59
+  - enemyPrefab: {fileID: 0}
+    enemyAmount: 1
+  insideRadius: 6
   showGizmos: 1
 --- !u!1 &8524920777160220732
 GameObject:
