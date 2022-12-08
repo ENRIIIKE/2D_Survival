@@ -4,9 +4,5 @@ using UnityEngine;
 
 public class EntityHealth : HealthSystem
 {
-
-    public override void UpdateSlider(int health)
-    {
-
-    }
+    //Entity code not yet planned
 }

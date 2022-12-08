@@ -31,7 +31,6 @@ public abstract class HealthSystem : MonoBehaviour, IDamagable
                 , gameObject.name, damage, health);
             */
         }
-        UpdateSlider(health);
         CheckHealthState();
     }
     private void CheckHealthState()
@@ -43,5 +42,4 @@ public abstract class HealthSystem : MonoBehaviour, IDamagable
             Destroy(gameObject, 0.12f);
         }
     }
-    public abstract void UpdateSlider(int health);
 }

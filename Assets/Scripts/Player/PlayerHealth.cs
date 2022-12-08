@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerHealth : HealthSystem
@@ -9,10 +6,9 @@ public class PlayerHealth : HealthSystem
     void Start()
     {
         healthSlider.maxValue = maxHealth;
-        UpdateSlider(health);
     }
 
-    public override void UpdateSlider(int health)
+    private void Update()
     {
         healthSlider.value = health;
     }

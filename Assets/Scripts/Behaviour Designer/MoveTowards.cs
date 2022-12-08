@@ -1,21 +1,28 @@
+using System;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
 using BehaviorDesigner.Runtime.Tasks;
+using Action = BehaviorDesigner.Runtime.Tasks.Action;
 
+[Serializable]
 public class MoveTowards : Action
 {
     // The distance to attack player
-    public SharedFloat attackDistance;
+    [SerializeField]
+    private SharedFloat attackDistance;
     // The distance to spot and hunt player
-    public SharedFloat seekDistance;
+    [SerializeField]
+    private SharedFloat seekDistance;
     // The speed of the object
-    public float speed = 0;
+    [SerializeField]
+    private SharedFloat speed;
     // The transform that the object is moving towards
-    public SharedTransform target;
+    [SerializeField]
+    private SharedTransform target;
 
     public override TaskStatus OnUpdate()
     {
-        float distance = Vector2.Distance(transform.position, target.Value.position);
+        var distance = Vector2.Distance(transform.position, target.Value.position);
         // Return a task status of success once we've reached the target
         if (distance <= attackDistance.Value)
         {
@@ -27,9 +34,9 @@ public class MoveTowards : Action
         {
             return TaskStatus.Failure;
         }
-        
+
         // We haven't reached the target yet so keep moving towards it
-        transform.position = Vector3.MoveTowards(transform.position, target.Value.position, speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, target.Value.position, speed.Value * Time.deltaTime);
         return TaskStatus.Running;
     }
 }
