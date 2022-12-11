@@ -6,17 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="939ede9d-1a7c-4918-9dea-2cc8dae035f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Entity/Goblin.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Entity/Goblin.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Attack.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Attack.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Enemy_Melee_Behaviour.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Enemy_Melee_Behaviour.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Enemy_Ranger_Behaviour.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Enemy_Ranger_Behaviour.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/MoveTowards.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/MoveTowards.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/WithinSight.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/WithinSight.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Behaviour Trees/Enemy_Melee_Behaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Behaviour Trees/Enemy_Melee_Behaviour.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Scripts/EntityIdle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Scripts/EntityIdle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Scriptable Objects/Entities/Goblin.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +92,8 @@
       <workItem from="1670445453368" duration="720000" />
       <workItem from="1670532229482" duration="599000" />
       <workItem from="1670535996818" duration="6710000" />
-      <workItem from="1670586315137" duration="1333000" />
+      <workItem from="1670586315137" duration="1363000" />
+      <workItem from="1670600243014" duration="1255000" />
     </task>
     <task id="LOCAL-00001" summary="First Rider Commit">
       <created>1670538573464</created>
@@ -136,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670542781547</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Adjusted trees">
+      <created>1670593926812</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1670593926812</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -163,7 +164,8 @@
     <MESSAGE value="Second experiment" />
     <MESSAGE value="Continuously experimenting" />
     <MESSAGE value="Small Changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Small Changes" />
+    <MESSAGE value="Adjusted trees" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adjusted trees" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

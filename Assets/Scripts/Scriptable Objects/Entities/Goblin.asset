@@ -19,4 +19,4 @@ MonoBehaviour:
   movementSpeed: 3
   attackSpeed: 1.4
   attackDistance: 1.2
-  seekDistance: 6
+  seekDistance: 8
