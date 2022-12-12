@@ -1,18 +1,24 @@
+using System;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
+using UnityEditor.U2D.Path;
 
 public class EntityController : MonoBehaviour
 {
     [Header("General")]
     public EntitySo entitySo;
-    private Transform temporaryObjects;
+    
+    // GameObject will be instantiated as a child of a temporary Object to have it more clean. 
+    //
+    //private Transform temporaryObjects;
 
     [Header("Behaviour Tree")] 
     private BehaviorTree behaviourTree;
     
     private void Awake()
     {
-        temporaryObjects = GameObject.Find("--Temporary--").transform;
+        //temporaryObjects = GameObject.Find("--Temporary--").transform;
+        
         behaviourTree = GetComponent<BehaviorTree>();
         
         behaviourTree.SetVariableValue("Movement Speed", entitySo.movementSpeed);
@@ -25,5 +31,10 @@ public class EntityController : MonoBehaviour
     {
         //Attack code
         Debug.Log(entitySo.name + " is attacking.");
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawWireSphere(transform.position, entitySo.seekDistance);
     }
 }
