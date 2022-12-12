@@ -1,7 +1,6 @@
-using System;
 using UnityEngine;
 using BehaviorDesigner.Runtime;
-using UnityEditor.U2D.Path;
+
 
 public class EntityController : MonoBehaviour
 {
@@ -13,7 +12,7 @@ public class EntityController : MonoBehaviour
     //private Transform temporaryObjects;
 
     [Header("Behaviour Tree")] 
-    private BehaviorTree behaviourTree;
+    public BehaviorTree behaviourTree;
     
     private void Awake()
     {

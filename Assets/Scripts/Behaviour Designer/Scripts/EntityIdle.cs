@@ -21,7 +21,7 @@ public class EntityIdle : Action
         
         // Move towards the new idle position and returns task status as running
         transform.position = Vector3.MoveTowards(transform.position, newPosition.Value, movementSpeed.Value * Time.deltaTime);
-
+        
         return TaskStatus.Running;
     }
 }
