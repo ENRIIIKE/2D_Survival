@@ -11,7 +11,7 @@ public class EntityController : MonoBehaviour
     //
     //private Transform temporaryObjects;
 
-    [Header("Behaviour Tree")] 
+    [HideInInspector]
     public BehaviorTree behaviourTree;
     
     private void Awake()

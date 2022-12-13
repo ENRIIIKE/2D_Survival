@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class EntityHealth : HealthSystem
 {
-    //Entity code not yet planned
+    // Placeholder
 }

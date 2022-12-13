@@ -35,11 +35,9 @@ public abstract class HealthSystem : MonoBehaviour, IDamagable
     }
     private void CheckHealthState()
     {
-        if (health <= 0)
-        {
-            isDead = true;
+        if (health > 0) return;
+        isDead = true;
 
-            Destroy(gameObject, 0.12f);
-        }
+        Destroy(gameObject, 0.12f);
     }
 }
