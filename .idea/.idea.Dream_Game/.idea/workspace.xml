@@ -7,14 +7,10 @@
     <list default="true" id="939ede9d-1a7c-4918-9dea-2cc8dae035f6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Dream_Game/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Test Level.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Behaviour Trees/Enemy_Melee_Behaviour.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Behaviour Designer/Behaviour Trees/Enemy_Melee_Behaviour.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityFocusScript.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Entity/EntityFocusScript.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Utilities/HealthSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Utilities/HealthSystem.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Sprites/Player.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sprites/Player.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -102,6 +98,10 @@
       <workItem from="1670755780495" duration="1623000" />
       <workItem from="1670878391645" duration="2880000" />
       <workItem from="1670951291176" duration="2264000" />
+      <workItem from="1670962123818" duration="73000" />
+      <workItem from="1671974338624" duration="14000" />
+      <workItem from="1672682850251" duration="510000" />
+      <workItem from="1672699344687" duration="1805000" />
     </task>
     <task id="LOCAL-00001" summary="First Rider Commit">
       <created>1670538573464</created>
@@ -166,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670881266693</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="AI is good for prototype.&#10;&#10;Next goal is.. graphics.. oh boy..">
+      <created>1670962182209</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1670962182209</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -197,7 +204,8 @@
     <MESSAGE value="B. Tree Fixes" />
     <MESSAGE value="Entity Idle" />
     <MESSAGE value="Entity Idle Finished" />
-    <option name="LAST_COMMIT_MESSAGE" value="Entity Idle Finished" />
+    <MESSAGE value="AI is good for prototype.&#10;&#10;Next goal is.. graphics.. oh boy.." />
+    <option name="LAST_COMMIT_MESSAGE" value="AI is good for prototype.&#10;&#10;Next goal is.. graphics.. oh boy.." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

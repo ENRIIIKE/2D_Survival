@@ -2352,8 +2352,9 @@ GameObject:
   m_Component:
   - component: {fileID: 978092500}
   - component: {fileID: 978092501}
+  - component: {fileID: 978092502}
   m_Layer: 0
-  m_Name: Sprite
+  m_Name: Player Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2426,6 +2427,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &978092502
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 978092499}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b0a4bbe1656b47843b02fb0768a50d7d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!224 &981880853 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3926371437337225438, guid: 13db8e1c9c6962245ac247e7f4e5149c, type: 3}
@@ -4237,7 +4258,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.6
+  orthographic size: 7.5
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -4891,7 +4912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
-  playerSprite: {fileID: 978092501}
+  animator: {fileID: 0}
   speed: 6
   isMoving: 0
 --- !u!61 &1748098202
@@ -4910,10 +4931,10 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.9375, y: 0.9375}
+    newSize: {x: 1.125, y: 0.9375}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -5808,7 +5829,7 @@ MonoBehaviour:
   m_Follow: {fileID: 1748098204}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 9.6
+    OrthographicSize: 7.5
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0
@@ -6213,11 +6234,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6596949326159250649, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.39
+      value: -18.992
       objectReference: {fileID: 0}
     - target: {fileID: 6596949326159250649, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.99
+      value: 2.687
       objectReference: {fileID: 0}
     - target: {fileID: 6596949326159250649, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6250,6 +6271,22 @@ PrefabInstance:
     - target: {fileID: 6596949326159250649, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596949326159250650, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1894982777, guid: c4fcc8584c276c24e903124dd77ba9d8, type: 3}
+    - target: {fileID: 6596949326159250650, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596949326159250650, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6596949326159250650, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7314d08f968824d4fb435ce0bc6b4c59, type: 3}

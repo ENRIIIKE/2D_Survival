@@ -1,9 +1,6 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Cinemachine;
 
 public class EntityFocusScript : MonoBehaviour
 {
@@ -22,11 +19,11 @@ public class EntityFocusScript : MonoBehaviour
     }
     private void FocusEntity()
     {
-        Vector3 mousePosition = Input.mousePosition;
+        var mousePosition = Input.mousePosition;
         mousePosition.z = cam.nearClipPlane;
-        Vector3 worldPosition = cam.ScreenToWorldPoint(mousePosition);
+        var worldPosition = cam.ScreenToWorldPoint(mousePosition);
 
-        Collider2D entity = Physics2D.OverlapCircle(worldPosition, checkRadius, focusLayer);
+        var entity = Physics2D.OverlapCircle(worldPosition, checkRadius, focusLayer);
 
         if (entity == null)
         {
@@ -37,7 +34,7 @@ public class EntityFocusScript : MonoBehaviour
         focusObject.SetActive(true);
         entityFound = entity.transform.parent.gameObject;
 
-        EntityHealth entityHealthSystem = entityFound.GetComponent<EntityHealth>();
+        var entityHealthSystem = entityFound.GetComponent<EntityHealth>();
 
         entityText.text = entityFound.name;
         entityBar.value = entityHealthSystem.health;

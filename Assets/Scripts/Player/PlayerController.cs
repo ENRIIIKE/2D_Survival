@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -7,9 +5,8 @@ public class PlayerController : MonoBehaviour
     [Header("General")]
     [HideInInspector] public Rigidbody2D rb;
 
-    [SerializeField]
-    private SpriteRenderer playerSprite;
-    
+    [HideInInspector] public Animator animator;
+
     [Header("Movement")]
     public float speed;
     public bool isMoving;
@@ -18,7 +15,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void FixedUpdate()
@@ -31,16 +28,18 @@ public class PlayerController : MonoBehaviour
         var x = Input.GetAxisRaw("Horizontal");
         var y = Input.GetAxisRaw("Vertical");
 
-        rb.velocity = new Vector2(x * speed, y * speed);
+        rb.velocity = new Vector2(x, y);
+        Vector3.Normalize(rb.velocity);
+        rb.velocity *= speed;
 
 
         if (x > 0)
         {
-            transform.localScale = new Vector3(-1, 1, 1);
+            transform.localScale = new Vector3(1, 1, 1);
         }
         else if (x < 0)
         {
-            transform.localScale = new Vector3(1, 1, 1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (x == 0 && y == 0)
@@ -56,7 +55,8 @@ public class PlayerController : MonoBehaviour
         {
             isMoving = false;
         }
-
-        //Normalize rb.velocity;
+        
+        animator.SetBool("isMoving", isMoving);
+        
     }
 }
